@@ -12,6 +12,15 @@
 </head>
 
 <body>
-<h1>Test</h1>
+<br>
+<form method="post" action = "/login">
+    <input type="text" name="login" placeholder="Imię">
+    <br/><br>
+    <input type="password" name="password" placeholder="Hasło">
+    <br/><br/>
+    <input type="submit" value="zaloguj" >
+</form>
+<p>${sessionScope.message}</p>
+
 </body>
 </html>

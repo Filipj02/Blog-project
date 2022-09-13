@@ -14,12 +14,28 @@ public class BlogLoginServlet extends HttpServlet {
                 getServletContext().
                 getRequestDispatcher("/WEB-INF/views/bloglogin.jsp").
                 forward(request, response);
+        request.getSession().setAttribute("message","");
+
 
 
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String login = request.getParameter("login");
+        String password = request.getParameter("password");
+
+        if (login.equals("Admin") && password.equals("1")) {
+            request.getSession().setAttribute("logged", "Admin");
+            response.sendRedirect("/");
+
+        } else{response.sendRedirect("/login");
+        request.getSession().setAttribute("message","Zły login lub hasło");
+
+        }
+
+
+        }
 
     }
-}
+
