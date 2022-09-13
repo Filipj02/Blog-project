@@ -21,9 +21,11 @@ public class Post {
     private Long id;
 
 
+    @Column(nullable = false, unique = true)
     private String title;
 
 
+    @Column(nullable = false, length = 3000)
     private String description;
 
 

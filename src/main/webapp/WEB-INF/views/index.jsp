@@ -3,25 +3,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+
+    <title>Blog</title>
+    <link rel="stylesheet" href="../../style.css">
+
 </head>
 <body>
+<h1>Blog</h1>
 <c:if test="${not empty sessionScope.logged}">
-    <form>
-        <input type="text" name="title">
-        <input type="textarea" name="textarea">
-    </form>
+    <div>
+    <p>Dodaj nowy post</p>
+    <form method="post" action="/">
+        <input type="text" name="title" placeholder="tytuł">
+        <input type="textarea" name="content" placeholder="wpisz treść posta">
+        <button type="submit" name="">Zatwierdź</button>
 
+
+    </form>
+    </div>
 </c:if>
 
 <br/>
 <c:forEach items="${posts}" var="post">
-    <p>${post}</p>
+    <a href="/show_post?id=${post.getId()}">${post.getTitle()}</a>
     <c:if test="${not empty sessionScope.logged}">
-        <p>${post.getId()}</p>
         <a href="/edit_post?id=${post.getId()}">Edit</a>
-        <a href="/delete_post?id=${post.getId()}">Delete</a>
-    </c:if>
+        <a id="delete" href="/delete_post?id=${post.getId()}">Delete</a>
+
+
+
+    </c:if><br>
 </c:forEach>
+
 </body>
 </html>
