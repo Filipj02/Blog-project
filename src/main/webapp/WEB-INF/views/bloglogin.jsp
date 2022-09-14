@@ -9,7 +9,42 @@
 <html>
 <head>
 
-    <link rel="stylesheet"  type= "text/css" href="../../style.css">
+    <style>
+        h1{
+            text-align: center;
+        }
+        body{
+            font-family: 'Share Tech', sans-serif;
+            font-size:68px;
+            color:white;
+            /*display: flex;*/
+            /*justify-content: center;*/
+            /*align-items: center;*/
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            text-shadow: 8px 8px 10px #0000008c;
+            background-color: #343a40;
+
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        a{
+            text-align: center;
+            text-decoration: none;
+        }
+        a:hover{
+            color:white;
+        }
+        p{
+            text-align: center;
+        }
+
+
+    </style>
     <title>Title</title>
 </head>
 
